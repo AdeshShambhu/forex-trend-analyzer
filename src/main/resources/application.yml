@@ -1,0 +1,10 @@
+server:  port: 8080 
+
+# FOREX API related configs
+forex-api-url: https://api.exchangeratesapi.io
+forex-trend-days: 5
+
+
+
+spring:  jpa:    show-sql: true#### POSTGRESQL DB Related Configurations ####  datasource:    url: jdbc:postgresql://localhost:5433/forex    username: postgres     password: postgres# Flyway migration tool  flyway:    enabled: true    url: jdbc:postgresql://localhost:5433/forex    user: postgres    password: postgres    schemas: forex_schema    table: flyway_schema_version    locations: classpath:db/product    placeholder-replacement: true    placeholder-prefix: $    placeholder-suffix: $    placeholders.FOREX_DB_USER: postgres       
+

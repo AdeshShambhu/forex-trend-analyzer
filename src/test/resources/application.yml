@@ -1,0 +1,11 @@
+server:  port: 8080 
+
+
+# FOREX API related configs
+forex-api-url: https://api.exchangeratesapi.io
+forex-trend-days: 5
+
+
+
+spring:  jpa:    show-sql: true#### POSTGRESQL DB Related Configurations ####  datasource:    url: jdbc:h2:mem:somedatebase;DB_CLOSE_DELAY=-1    username: sa     password: # Flyway migration tool  flyway:    enabled: false       
+
