@@ -2,7 +2,7 @@
 FROM openjdk:11
 
 #Copy the jar into the container
-COPY ./target/forex-1.0.jar forex-1.0.jar
+COPY target/forex-1.0.jar forex-1.0.jar
 
 #expose the tomcat port
 EXPOSE 8080
