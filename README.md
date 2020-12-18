@@ -13,7 +13,7 @@ This application can be used to query the forex information for a particular day
     - **UNDEFINED**: If the forex rates from the last 5 days are varying.
 ---
 **Limitations**:
-- The Application only supports request dates between 2000-01-01 until yesterday (As the [ExchangeRatesAPI](https://exchangeratesapi.io/) does not provide real-time data).
+- The Application only supports request dates between 2000-01-01 until yesterday (as the [ExchangeRatesAPI](https://exchangeratesapi.io/) does not provide real-time data).
 - For the Average and Trend analysis, the weekend(Saturday and Sunday) days are skipped and previous week's data is included to fill the 5 days trend.
 - The forex rates are not available on bank holidays, hence if the 5 days trend window has a public holiday in it, the data is skipped to avoid bias.
 ---
@@ -25,11 +25,14 @@ This application can be used to query the forex information for a particular day
 - Apache Maven
 - Swagger UI
 - Flyway
-- *TODO: Docker*
+- Docker
 
 
 
 ## How to Execute the Microservice
+The application can be executed on a JAVA IDE or in docker containers.
+
+To run the application on docker containers, please refer to the [Forex-Trend-Analyzer-Docker](https://github.com/AdeshShambhu/forex-trend-analyzer-docker-compose) documentation.
 ### Prerequisite
 To run this microservice, please check if you have the following tools/software in your local environment:
 - Java 11 JDK
@@ -40,9 +43,11 @@ To run this microservice, please check if you have the following tools/software 
 2. Configure the connections and ports:
    Please make sure to alter the following configurations in `src/main/resources/application.yml` if you do not want the default setup.
     - `server.port` : port for the embedded tomcat (Default 8080)
-    - `datasource.url`, `flyway.url` : JDBC URL for the DB connections
-    - `datasource.user`, `flyway.url` : Credentials for DB
-    - `datasource.password`, `flyway.password` : Credentials for DB
+    - `db.name`: database name  (default postgres)
+    - `db.host`: JDBC URL for the DB connections
+    - `db.port`: JDBC URL for the DB connections
+    - `db.username` : Credentials for DB
+    - `db.password` : Credentials for DB
 3. Run the application
 4. Check if the application is running by checking the URL : `http:/localhost:<server.port>/healthcheck`
 

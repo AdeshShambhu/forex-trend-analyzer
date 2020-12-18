@@ -8,4 +8,4 @@ COPY ./target/forex-1.0.jar forex-1.0.jar
 EXPOSE 8080
 
 # start the application
-ENTRYPOINT ["java","-jar","forex-1.0.jar"]
+ENTRYPOINT ["java","-Dspring.profiles.active=prod","-jar","forex-1.0.jar"]

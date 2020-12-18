@@ -1,11 +1,1 @@
-server:  port: 8080 
-
-
-# FOREX API related configs
-forex-api-url: https://api.exchangeratesapi.io
-forex-trend-days: 5
-
-
-
-spring:  jpa:    show-sql: true#### POSTGRESQL DB Related Configurations ####  datasource:    url: jdbc:h2:mem:somedatebase;DB_CLOSE_DELAY=-1    username: sa     password: # Flyway migration tool  flyway:    enabled: false       
-
+############## Property for Test cases ####################server:  port: 8080# FOREX API related configsforex-api-url: https://api.exchangeratesapi.ioforex-trend-days: 5#JDBC URl for postgresdb:  name: postgres  host: localhost  port: 5433  username: postgres  password: postgresspring:  jpa:    show-sql: true  #### POSTGRESQL DB Related Configurations ####  datasource:    url: jdbc:h2:mem:forex_h2_db;DB_CLOSE_DELAY=-1    username: sa    password: ${db.password}  # Flyway migration tool  flyway:    enabled: false    url: jdbc:postgresql://${db.host}:${db.port}/${db.name}    user: ${db.username}    password: ${db.password}    schemas: forex_schema    table: flyway_schema_version    locations: classpath:db/product    placeholder-replacement: true    placeholder-prefix: $    placeholder-suffix: $    placeholders.FOREX_DB_NAME: ${db.name}    placeholders.FOREX_DB_USER: ${db.username}       
