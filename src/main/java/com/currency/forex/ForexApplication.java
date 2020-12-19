@@ -38,8 +38,8 @@ public class ForexApplication {
 	
 	private ApiInfo apiDetails() {
 		return new ApiInfo("Forex Trend Analyzer", "A Spring Boot Microservice to fetch and analyze " +
-				"the currency forex rates. \n Forex Information obtained from https://exchangeratesapi.io/." +
-				"\n The code repository can at: https://github.com/AdeshShambhu/forex-trend-analyzer",
+				"the currency forex rates. \n Forex Information is obtained from https://exchangeratesapi.io/." +
+				"\n The code repository can be found at: https://github.com/AdeshShambhu/forex-trend-analyzer",
 				"1.0"
 				, null, null, null, null, Collections.emptyList());
 

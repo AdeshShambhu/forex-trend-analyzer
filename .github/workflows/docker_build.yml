@@ -24,7 +24,7 @@ jobs:
             uses: actions/setup-java@v1
             with:
               java-version: 11
-          - name: Build with Maven
+          - name: Build with Maven Project
             run: mvn clean compile package install
           -
             name: Set up QEMU
@@ -39,11 +39,11 @@ jobs:
               username: ${{ secrets.DOCKER_USER }}
               password: ${{ secrets.DOCKER_TOKEN }}
           -
-            name: Build
+            name: Docker Build & Push
             id: docker_build
             uses: docker/build-push-action@v2
             with:
               context: . # context path of the project
               push: true
-              tags: adesh491/forex_sl:1.0
+              tags: adesh491/forex_sl:1.0 #TODO parameterize the version number
               file: ./Dockerfile
