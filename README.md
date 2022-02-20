@@ -11,6 +11,8 @@ This application can be used to query the forex information for a particular day
     - **ASCENDING**: If the forex rates from the last 5 days are in an upward trend.
     - **CONSTANT**: If the forex rates are constant for 5 last days.
     - **UNDEFINED**: If the forex rates from the last 5 days are varying.
+
+
 ---
 **Limitations**:
 - The Application only supports request dates between 2000-01-01 until yesterday (as the [ExchangeRatesAPI](https://exchangeratesapi.io/) does not provide real-time data).
